@@ -1,0 +1,107 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 6,
+        "name": "Gmail Login",
+        "description": "",
+        "id": "gmail-login-and-composing-mail;gmail-login",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 7,
+            "name": "User is on the login page",
+            "match": {},
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 8,
+            "name": "User enters e-mail address and password",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 9,
+            "name": "User navigates to gmail account",
+            "match": {},
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 5,
+            "name": "@tag1"
+          }
+        ]
+      },
+      {
+        "line": 12,
+        "name": "Composing mail",
+        "description": "",
+        "id": "gmail-login-and-composing-mail;composing-mail",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 13,
+            "name": "user clicks on compose button",
+            "match": {},
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 14,
+            "name": "user enters mailid and subject",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 15,
+            "name": "user enters text message and attachment",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 16,
+            "name": "user clicks on send button",
+            "match": {},
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 11,
+            "name": "@tag2"
+          }
+        ]
+      }
+    ],
+    "name": "Gmail Login and composing mail",
+    "description": "I want to login into my gmail account and compose first mail",
+    "id": "gmail-login-and-composing-mail",
+    "keyword": "Feature",
+    "uri": "src/test/java/Features/login.feature"
+  }
+]

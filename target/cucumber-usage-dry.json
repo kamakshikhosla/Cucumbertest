@@ -1,0 +1,20 @@
+[
+  {
+    "source": "^user clicks on compose button",
+    "steps": [
+      {
+        "name": "user clicks on compose button",
+        "aggregatedDurations": {
+          "average": 2.108586533,
+          "median": 2.108586533
+        },
+        "durations": [
+          {
+            "duration": 2.108586533,
+            "location": "login.feature:13"
+          }
+        ]
+      }
+    ]
+  }
+]
