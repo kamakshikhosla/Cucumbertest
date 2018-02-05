@@ -5,6 +5,7 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,17 +22,42 @@ public class Gmail_logout
 {
 	Robot rb1;
 	public static WebDriver driver;
-	private Gmail_Login q1;
+	private Gmail_logout q1;
 	private Login1 q2;
+	//private Gmail_Login q3;
+	
+	
 	
 	@Given("^User is LoggedIn into account$")
 	public void user_is_LoggedIn_into_account() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		System.setProperty("webdriver.chrome.driver","C:\\cucumbertest\\src\\main\\resources\\chromedriver.exe");
-        driver  = new ChromeDriver();
-        q1.user_enters_e_mail_address(q2.mail1,Config.email1);
-		q1.user_enters_password(q2.pass1,Config.pass1);
-		q1.user_navigates_to_gmail_account();
+       driver  = new ChromeDriver();
+       // q3=new Gmail_Login();
+        q1=new Gmail_logout();
+       driver.get("https://mail.google.com/mail/u/0/#inbox");
+       driver.findElement(By.id("identifierId")).sendKeys(Config.email1);
+       Thread.sleep(3000);
+		rb1=new Robot();
+		rb1.keyPress(KeyEvent.VK_ENTER);
+		rb1.keyRelease(KeyEvent.VK_ENTER);
+		Thread.sleep(3000);
+       driver.findElement(By.xpath("//div[@class=\"Xb9hP\"]/input")).sendKeys(Config.pass1);
+       Thread.sleep(3000);
+		rb1=new Robot();
+		rb1.keyPress(KeyEvent.VK_ENTER);
+		rb1.keyRelease(KeyEvent.VK_ENTER);
+		
+		//Thread.sleep(3000);
+		//driver.findElement(By.className("WaidBe")).click();
+		//driver.navigate().forward();
+		//Thread.sleep(3000);
+       // q3.user_enters_e_mail_address(q2.mail1,Config.email1);
+		//q3.user_enters_password(q2.pass1,Config.pass1);
+		//q3.user_navigates_to_gmail_account();
+       // q1.user_enters_e_mail_address(q2.mail1,Config.email1);
+		//q1.user_enters_password(q2.pass1,Config.pass1);
+		//q1.user_navigates_to_gmail_account();
         //driver.get("https://www.google.com");
 	    throw new PendingException();
 	}
@@ -45,7 +71,7 @@ public class Gmail_logout
 		}
 	    throw new PendingException();
 	}
-	@Then("^user clicks on profile profile popup")
+	@Then("^user clicks on profile popup")
 	public void profile_pop_up_appears(WebElement t2) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 		if(t2.isDisplayed())

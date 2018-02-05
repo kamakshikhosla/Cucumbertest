@@ -1,13 +1,13 @@
 
-@tag
+
 Feature: Gmail Account Logout
   User wants to logout from gmail account
 
-  @tag1
+  @tag3
   Scenario: Gmail Logout
     Given User is LoggedIn into account
     When user clicks on profile icon 
-    Then user clicks on profile profile popup
+    Then user clicks on profile popup
     And  user clicks on change icon
     And  user clicks on select picture
     And  user clicks on set profile pic

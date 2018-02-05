@@ -6,13 +6,22 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeGroups;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
@@ -36,24 +45,24 @@ public class Gmail_Login
 	@Given("^User is on the login page$")
 	public void user_is_on_the_login_page() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		
-		 System.setProperty("webdriver.chrome.driver","C:\\cucumbertest\\src\\main\\resources\\chromedriver.exe");
-         driver  = new ChromeDriver();
+		System.out.println("hello");
+		System.setProperty("webdriver.chrome.driver","C:\\cucumbertest\\src\\main\\resources\\chromedriver.exe");
+        driver  = new ChromeDriver(); 
 		q1=new Gmail_Login();
 		q2=new Login1(driver);
 		driver.get("https://accounts.google.com/");
 		driver.manage().window().maximize();
-		//q1.user_is_on_the_login_page();
+		q1.user_is_on_the_login_page();
 		q1.user_enters_e_mail_address(q2.mail1,Config.email1);
-		q1.user_enters_password(q2.pass1,Config.pass1);
-		q1.user_navigates_to_gmail_account();
-		q1.user_clicks_on_compose_button();
-		q1.user_enters_mailid();
-		q1.user_enters_subject();
-		//q1.user_enters_text_message();
-		//q1.user_enters_Attachment();
-		q1.user_clicks_on_send_button();
-		
+//		q1.user_enters_password(q2.pass1,Config.pass1);
+//		q1.user_navigates_to_gmail_account();
+//		q1.user_clicks_on_compose_button();
+//		q1.user_enters_mailid();
+//		q1.user_enters_subject();
+//		q1.user_enters_text_message();
+//		q1.user_enters_Attachment();
+//		q1.user_clicks_on_send_button();
+//		
 		String url1=driver.getCurrentUrl();
 		//Assert.assertEquals(config.formUrl,url1);
 		
@@ -94,7 +103,7 @@ public class Gmail_Login
 	@Then("^User navigates to gmail account$")
 	public void user_navigates_to_gmail_account() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		driver.findElement(By.className("WaidBe")).click();;
+		driver.findElement(By.className("WaidBe")).click();
 		//driver.navigate().forward();
 		Thread.sleep(3000);
 	    throw new PendingException();
@@ -118,6 +127,7 @@ public class Gmail_Login
 		if(e4.isDisplayed())
 		{
 			e4.sendKeys(Config.email1);
+			
 			Thread.sleep(2000);
 		}
 	    //throw new PendingException();
