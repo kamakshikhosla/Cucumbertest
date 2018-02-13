@@ -23,7 +23,7 @@ public class Gmail_logout
 	Robot rb1;
 	public static WebDriver driver;
 	private Gmail_logout q1;
-	private Login1 q2;
+	//private Login1 q2;
 	//private Gmail_Login q3;
 	
 	
@@ -47,6 +47,7 @@ public class Gmail_logout
 		rb1=new Robot();
 		rb1.keyPress(KeyEvent.VK_ENTER);
 		rb1.keyRelease(KeyEvent.VK_ENTER);
+		
 		
 		//Thread.sleep(3000);
 		//driver.findElement(By.className("WaidBe")).click();
